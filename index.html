@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=600, height=600, initial-scale=1.0, user-scalable=no">
+  <meta name="description" content="Meta Ray-Ban Display 用の点字学習アプリ。五十音・濁音・拗音・数字・記号の日本語かな点字をD-padでたどって覚え、4択クイズで定着。あ行＋⑥＝か行など、点字のしくみが分かるヒント付き。依存ライブラリなし・オフライン動作。">
+  <meta name="mrbd-web-app-capable" content="yes">
+  <title>グラス点字 — Glass Tenji</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <div id="hud">
+      <span id="hud-mode">⠿ グラス点字</span>
+      <span id="hud-right"></span>
+    </div>
+    <div id="hint"></div>
+
+    <!-- メニュー -->
+    <div id="menu" class="screen">
+      <div class="panel">
+        <div class="t-logo">⠿</div>
+        <div class="t-title">グラス点字</div>
+        <div class="t-sub">D-padでたどって、指で読む文字をおぼえる</div>
+        <div class="menu-list" id="menu-list"></div>
+      </div>
+    </div>
+
+    <!-- 一覧（ブラウズ） -->
+    <div id="browse" class="screen hidden">
+      <div id="tabs"></div>
+      <div id="browse-body">
+        <div id="card">
+          <div id="cells"></div>
+          <div id="card-kana"></div>
+          <div id="card-dots"></div>
+          <div id="card-hint"></div>
+        </div>
+        <div id="grid"></div>
+      </div>
+    </div>
+
+    <!-- クイズ -->
+    <div id="quiz" class="screen hidden">
+      <div id="q-cells"></div>
+      <div id="q-text">この点字は？</div>
+      <div id="q-choices"></div>
+      <div id="q-feedback"></div>
+    </div>
+
+    <!-- 結果 -->
+    <div id="result" class="screen hidden">
+      <div class="panel">
+        <div class="t-logo" id="r-logo">⠿</div>
+        <div class="t-title" id="r-score">10 / 10</div>
+        <div class="t-sub" id="r-sub"></div>
+        <div class="menu-list" id="r-list"></div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
